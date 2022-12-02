@@ -1,0 +1,19 @@
+<h1>Guest List</h1>
+
+<table>
+  <tr>
+    <th>Primary Guest</th>
+    <th>Will be attending?</th>
+    <th>Guest comment</th>
+    <th>Additional guest</th>
+    <th>Additional guest name</th>
+  </tr>
+
+  <tr *ngFor="let row of dataFromServer?.records">
+    <td>{{row.fields.PrimaryGuest}}</td>
+    <td><input type="checkbox" [checked]="row.fields.WillBeAttending">{{row.fields.WillBeAttending}}</td>
+    <td>{{row.fields.Comment}}</td>
+    <td><input type="checkbox" [checked]="row.fields.AdditionalGuest">{{row.fields.AdditionalGuest}}</td>
+    <td>{{row.fields.AdditionalGuestName}}</td>
+  </tr>
+</table>
